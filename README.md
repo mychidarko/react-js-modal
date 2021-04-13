@@ -7,11 +7,11 @@ The simplest modal manager for your react apps.
 You can get react js modal up and running simply with yarn or npm
 
 ```sh
-npm install react-js-modal --save
+npm install reactjs-modal --save
 ```
 
 ```sh
-yarn add react-js-modal
+yarn add reactjs-modal
 ```
 
 ## QuickStart
@@ -19,25 +19,25 @@ yarn add react-js-modal
 To get started, simply import the modal component.
 
 ```js
-import Modal from "react-js-modal";
+import Modal from "reactjs-modal";
 ```
 
 React JS modal also comes with styles you can apply for cool effects and transitions. It comes in both CSS and SCSS, so you can use whichever you prefer.
 
 ```js
-import "react-js-modal/dist/css/styles.scss";
+import "reactjs-modal/dist/css/styles.scss";
 // or
-import "react-js-modal/dist/css/styles.css";
+import "reactjs-modal/dist/css/styles.css";
 ```
 
 > It's better to import the styles in a top-most component like `App.js` in create-react-app.
 
 From there, you can start building your awesome modal.
 
-> react-js-modal also has 100% typescript support as it's completely written in TypeScript.
+> reactjs-modal also has 100% typescript support as it's completely written in TypeScript.
 
 ```tsx
-import Modal from "react-js-modal";
+import Modal from "reactjs-modal";
 
 const MyAwesomeModal = () => {
   return (
@@ -61,7 +61,7 @@ const App = () => {
 From here, you can trigger the modal by simply doing this
 
 ```tsx
-import { modal } from "react-js-modal";
+import { modal } from "reactjs-modal";
 
 // show modal defined above
 modal.show("awesome-modal");

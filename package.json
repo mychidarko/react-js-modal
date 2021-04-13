@@ -1,5 +1,5 @@
 {
-  "name": "react-js-modal",
+  "name": "reactjs-modal",
   "version": "0.0.1",
   "description": "The simplest modal manager for your react apps.",
   "main": "dist/index.js",
@@ -29,9 +29,6 @@
     "url": "https://github.com/darko-mychi/react-js-modal/issues"
   },
   "homepage": "https://github.com/darko-mychi/react-js-modal#readme",
-  "peerDependencies": {
-    "react": "*"
-  },
   "devDependencies": {
     "@types/react": "^17.0.2",
     "react": "^17.0.1",
