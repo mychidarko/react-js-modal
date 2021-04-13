@@ -1,0 +1,42 @@
+{
+  "name": "react-js-modal",
+  "version": "0.0.1",
+  "description": "The simplest modal manager for your react apps.",
+  "main": "dist/index.js",
+  "module": "dist/react-js-modal.esm.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darko-mychi/react-js-modal.git"
+  },
+  "keywords": [
+    "modal",
+    "typescript",
+    "reactjs"
+  ],
+  "author": "Michael Darko-Duodu <mychi.darko@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/darko-mychi/react-js-modal/issues"
+  },
+  "homepage": "https://github.com/darko-mychi/react-js-modal#readme",
+  "peerDependencies": {
+    "react": "*"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.2",
+    "react": "^17.0.1",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.1.0",
+    "typescript": "^4.1.5"
+  }
+}
