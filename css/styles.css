@@ -1,0 +1,74 @@
+.rjsm__container {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.rjsm__container.-modal-show {
+  display: flex;
+}
+.rjsm__container.-modal-show .rjsm__modal {
+  animation: modalFadeDown 0.5s;
+  opacity: 1;
+}
+.rjsm__container.-modal-show .rjsm__overlay {
+  opacity: 1;
+}
+.rjsm__container.-modal-hide .rjsm__modal {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+.rjsm__container.-modal-hide .rjsm__overlay {
+  opacity: 0;
+}
+.rjsm__overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  width: 100vw !important;
+  height: 100vh !important;
+  position: fixed;
+  transition: ease all 0.4s;
+}
+.rjsm__modal {
+  background-color: white;
+  z-index: 2000;
+  position: relative;
+  width: 100%;
+  opacity: 0;
+  transition: ease all 0.4s;
+}
+.rjsm__modal__content {
+  height: 100%;
+}
+.rjsm__modal.-size-sm {
+  max-width: 300px;
+}
+.rjsm__modal.-size-md {
+  max-width: 500px;
+}
+.rjsm__modal.-size-lg {
+  max-width: 700px;
+}
+.rjsm__modal.-size-xl {
+  max-width: 900px;
+}
+.rjsm__modal.-size-full {
+  max-width: 100vw;
+}
+.rjsm__modal__close {
+  position: absolute;
+}
+@keyframes modalFadeDown {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

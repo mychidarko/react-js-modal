@@ -25,9 +25,9 @@ import Modal from "react-ts-modal";
 React JS modal also comes with styles you can apply for cool effects and transitions. It comes in both CSS and SCSS, so you can use whichever you prefer.
 
 ```js
-import "react-ts-modal/dist/css/styles.scss";
+import "react-ts-modal/css/styles.scss";
 // or
-import "react-ts-modal/dist/css/styles.css";
+import "react-ts-modal/css/styles.css";
 ```
 
 > It's better to import the styles in a top-most component like `App.js` in create-react-app.
