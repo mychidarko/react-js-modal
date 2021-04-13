@@ -1,6 +1,6 @@
 {
   "name": "react-ts-modal",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "The simplest modal manager for your react apps.",
   "main": "dist/index.js",
   "module": "dist/react-ts-modal.esm.js",
@@ -12,7 +12,8 @@
   },
   "files": [
     "dist",
-    "src"
+    "src",
+    "css"
   ],
   "repository": {
     "type": "git",

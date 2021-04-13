@@ -90,3 +90,7 @@ Other available props for `<Modal>`
 - show?: boolean ---------------- Manually show/hide modal (optional)
 - size?: string ----------------- Size of modal (optional, uses modal styling)
 - pageScroll?: boolean ---------- Enable/Disable page content scroll with modal active
+
+You can find a "real-world" demo [here](https://mychi-store.netlify.app/) source code [here](https://github.com/darko-mychi/store-front).
+
+Leave a star, contribute or give your feedback on this package. Thanks.
