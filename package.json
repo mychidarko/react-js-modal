@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "The simplest modal manager for your react apps.",
   "main": "dist/index.js",
-  "module": "dist/react-js-modal.esm.js",
+  "module": "dist/react-ts-modal.esm.js",
   "typings": "dist/index.d.ts",
   "scripts": {
     "start": "tsdx watch",
