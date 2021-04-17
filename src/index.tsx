@@ -38,16 +38,15 @@ const Modal: React.FC<ModalProps> = ({
 
   return (
     <div
-      className={`rjsm__container ${className} ${show ? "-modal-show" : "-modal-hide"}`}
+      className={`rjsm__container ${className} ${
+        show ? "-modal-show" : "-modal-hide"
+      }`}
       id={`${name}-rjsm-modal`}
     >
       <div className="rjsm__overlay" onClick={modalClose}></div>
       <div className={`rjsm__modal -size-${size || "md"}`} {...rest}>
         {closeButton && (
-          <button
-            onClick={close}
-            className="material-icons rjsm__modal__close"
-          >
+          <button onClick={close} className="material-icons rjsm__modal__close">
             close
           </button>
         )}
@@ -55,14 +54,18 @@ const Modal: React.FC<ModalProps> = ({
       </div>
     </div>
   );
-}
+};
 
 export class modal {
+  /**
+   * Show a defined modal
+   *
+   * @param {string} name The modal name
+   */
   public static show(name: string) {
-    const modal = this.findModal(name);
+    const modal = this.find(name);
 
     if (modal === null) {
-      console.warn(`\n"${name}" modal not found in DOM.`);
       return;
     }
 
@@ -70,11 +73,15 @@ export class modal {
     modal.classList.add("-modal-show");
   }
 
+  /**
+   * Hide a displayed modal
+   *
+   * @param {string} name The modal name
+   */
   public static hide(name: string, callback: Function | null = null) {
-    const modal = this.findModal(name);
+    const modal = this.find(name);
 
     if (modal === null) {
-      console.warn(`\n"${name}" modal not found in DOM.`);
       return;
     }
 
@@ -89,18 +96,32 @@ export class modal {
     }, 500);
   }
 
-  public static findModal(name: string): HTMLElement | null
-  {
-    return document.getElementById(`${name}-rjsm-modal`);
-  }
-
-  public static isOpen(name: string): boolean | null
-  {
-    const modal = this.findModal(name);
+  /**
+   * Find a modal in the DOM
+   *
+   * @param {string} name The modal name
+   */
+  public static find(name: string): HTMLElement | null {
+    const modal = document.getElementById(`${name}-rjsm-modal`);
 
     if (modal === null) {
       console.warn(`\n"${name}" modal not found in DOM.`);
       return null;
+    }
+
+    return modal;
+  }
+
+  /**
+   * Check if a modal is open
+   *
+   * @param {string} name The modal name
+   */
+  public static isOpen(name: string): boolean | null {
+    const modal = this.find(name);
+
+    if (modal === null) {
+      return modal;
     }
 
     return modal.classList.contains("-modal-show");
