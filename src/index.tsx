@@ -46,7 +46,7 @@ const Modal: React.FC<ModalProps> = ({
       <div className="rjsm__overlay" onClick={modalClose}></div>
       <div className={`rjsm__modal -size-${size || "md"}`} {...rest}>
         {closeButton && (
-          <button onClick={close} className="material-icons rjsm__modal__close">
+          <button onClick={modalClose} className="material-icons rjsm__modal__close">
             close
           </button>
         )}
@@ -66,6 +66,7 @@ export class modal {
     const modal = this.find(name);
 
     if (modal === null) {
+      console.warn(`\n"${name}" modal not found in DOM.`);
       return;
     }
 
@@ -82,6 +83,7 @@ export class modal {
     const modal = this.find(name);
 
     if (modal === null) {
+      console.warn(`\n"${name}" modal not found in DOM.`);
       return;
     }
 
@@ -102,14 +104,16 @@ export class modal {
    * @param {string} name The modal name
    */
   public static find(name: string): HTMLElement | null {
-    const modal = document.getElementById(`${name}-rjsm-modal`);
+    return document.getElementById(`${name}-rjsm-modal`);
+  }
 
-    if (modal === null) {
-      console.warn(`\n"${name}" modal not found in DOM.`);
-      return null;
-    }
-
-    return modal;
+  /**
+   * Check if a modal exists in the DOM
+   *
+   * @param {string} name The modal name
+   */
+  public static exists(name: string): boolean {
+    return !!this.find(name);
   }
 
   /**
@@ -117,11 +121,12 @@ export class modal {
    *
    * @param {string} name The modal name
    */
-  public static isOpen(name: string): boolean | null {
+  public static isOpen(name: string): boolean {
     const modal = this.find(name);
 
     if (modal === null) {
-      return modal;
+      console.warn(`\n"${name}" modal not found in DOM.`);
+      return false;
     }
 
     return modal.classList.contains("-modal-show");

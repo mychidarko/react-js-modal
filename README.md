@@ -94,3 +94,19 @@ Other available props for `<Modal>`
 You can find a "real-world" demo [here](https://mychi-store.netlify.app/) source code [here](https://github.com/darko-mychi/store-front).
 
 Leave a star, contribute or give your feedback on this package. Thanks.
+
+## Changelog
+
+### v1.1.0 - Apr 19, 2021
+
+#### Added
+
+- `modal.exists` to check if modal exists in DOM
+
+#### Fixed
+
+Modal close button onClick fixed.
+
+#### Changed
+
+- Warnings moved from `modal.find` to dependent methods.
