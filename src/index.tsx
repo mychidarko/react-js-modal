@@ -129,7 +129,6 @@ export class modal {
     const modal = this.find(name);
 
     if (modal === null) {
-      console.warn(`\n"${name}" modal not found in DOM.`);
       return false;
     }
 
