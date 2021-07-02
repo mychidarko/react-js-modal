@@ -7,4 +7,5 @@ export interface ModalProps {
     show?: boolean;
     size?: string;
     pageScroll?: boolean;
+    overlayClose?: boolean;
 };
