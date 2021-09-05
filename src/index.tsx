@@ -22,10 +22,18 @@ const Modal: React.FC<ModalProps> = ({
       close(e);
     }
 
+    if (isSSR) {
+      return;
+    }
+
     document.body.style.overflowY = "auto";
   };
 
   const checkModalStatus = useCallback(() => {
+    if (isSSR) {
+      return;
+    }
+
     if (!pageScroll && modal.isOpen(name)) {
       document.body.style.overflowY = "hidden";
     } else {
@@ -108,6 +116,10 @@ export class modal {
    * @param {string} name The modal name
    */
   public static find(name: string): HTMLElement | null {
+    if (isSSR) {
+      return null;
+    }
+
     return document.getElementById(`${name}-rjsm-modal`);
   }
 
@@ -135,5 +147,7 @@ export class modal {
     return modal.classList.contains("-modal-show");
   }
 }
+
+const isSSR = typeof window === 'undefined';
 
 export default Modal;
