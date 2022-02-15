@@ -8,6 +8,7 @@ export interface ModalProps {
   size?: string;
   pageScroll?: boolean;
   overlayClose?: boolean;
+  modalClassName?: string;
 };
 
 export interface ConfirmOptions {
@@ -29,4 +30,5 @@ export interface ConfirmOptions {
   cancelBtnClass?: string;
   onCancel?: React.MouseEventHandler<any>;
   size?: ModalProps["size"];
+  modalClassName?: ModalProps["modalClassName"];
 };
