@@ -1,94 +1,94 @@
 .rjsm {
-    &__container {
-        display: none;
-        position: fixed;
-        left: 0;
-        top: 0;
-        justify-content: center;
-        align-items: center;
-        width: 100vw;
-        height: 100vh;
+  &__container {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
 
-        &.-modal-show {
-            display: flex;
-            
-            .rjsm__modal {
-                animation: modalFadeDown .5s;
-                opacity: 1;
-            }
+    &.-modal-show {
+      display: flex;
 
-            .rjsm__overlay {
-                opacity: 1;
-            }
-        }
+      .rjsm__modal {
+        animation: modalFadeDown 0.5s;
+        opacity: 1;
+      }
 
-        &.-modal-hide {
-            .rjsm__modal {
-                transform: translateY(-20px);
-                opacity: 0;
-            }
-
-            .rjsm__overlay {
-                opacity: 0;
-            }
-        }
+      .rjsm__overlay {
+        opacity: 1;
+      }
     }
 
-    &__overlay {
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1000;
-        width: 100vw !important;
-        height: 100vh !important;
-        position: fixed;
-        transition: ease all .4s;
-    }
-
-    &__modal {
-        background-color: white;
-        z-index: 2000;
-        position: relative;
-        width: 100%;
+    &.-modal-hide {
+      .rjsm__modal {
+        transform: translateY(-20px);
         opacity: 0;
-        transition: ease all .4s;
+      }
 
-        &__content {
-            height: 100%;
-        }
-
-        &.-size-sm {
-            max-width: 300px;
-        }
-
-        &.-size-md {
-            max-width: 500px;
-        }
-
-        &.-size-lg {
-            max-width: 700px;
-        }
-
-        &.-size-xl {
-            max-width: 900px;
-        }
-
-        &.-size-full {
-            max-width: 100vw;
-        }
-
-        &__close {
-            position: absolute;
-        }
+      .rjsm__overlay {
+        opacity: 0;
+      }
     }
+  }
+
+  &__overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    width: 100vw !important;
+    height: 100vh !important;
+    position: fixed;
+    transition: ease all 0.4s;
+  }
+
+  &__modal {
+    background-color: white;
+    z-index: 2000;
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    transition: ease all 0.4s;
+
+    &__content {
+      height: 100%;
+    }
+
+    &.-size-sm {
+      max-width: 300px;
+    }
+
+    &.-size-md {
+      max-width: 500px;
+    }
+
+    &.-size-lg {
+      max-width: 700px;
+    }
+
+    &.-size-xl {
+      max-width: 900px;
+    }
+
+    &.-size-full {
+      max-width: 100vw;
+    }
+
+    &__close {
+      position: absolute;
+    }
+  }
 }
 
 @keyframes modalFadeDown {
-	0% {
-		transform: translateY(-20px);
-		opacity: 0;
-	}
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
 
-	100% {
-		transform: translateY(0px);
-		opacity: 1;
-	}
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
