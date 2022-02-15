@@ -57,7 +57,7 @@ const Modal: React.FC<ModalProps> = ({
         className="rjsm__overlay"
         onClick={overlayClose ? modalClose : () => {}}
       ></div>
-      <div className={`rjsm__modal -size-${size || "md"} ${modalClassName}`} {...rest}>
+      <div className={`rjsm__modal -size-${size || "md"} ${modalClassName} `} {...rest}>
         {closeButton && (
           <button onClick={modalClose} className="material-icons rjsm__modal__close">
             close
