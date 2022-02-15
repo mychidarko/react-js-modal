@@ -20,6 +20,7 @@ const useConfirm = ({
   cancelBtnStyle,
   cancelBtnClass,
   onCancel,
+  modalClassName,
   size = "md",
 }: ConfirmOptions) => {
   const [options, setOptions] = useState<ConfirmOptions>({
@@ -38,6 +39,7 @@ const useConfirm = ({
     cancelBtn,
     cancelBtnStyle,
     cancelBtnClass,
+    modalClassName,
     size,
     onConfirm: e => {
       if (onConfirm) {
@@ -64,6 +66,7 @@ const useConfirm = ({
           pageScroll={false}
           closeButton={false}
           size={options.size}
+          modalClassName={options.modalClassName}
         >
           <div>
             <h1>{options.title}</h1>
