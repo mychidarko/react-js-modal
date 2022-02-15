@@ -9,24 +9,44 @@ const useConfirm = ({
   confirmBtnText = "Confirm",
   cancelBtnText = "Cancel",
   hasCancel = true,
-  ...props
+  className,
+  subTitle,
+  actions,
+  confirmBtn,
+  confirmBtnStyle,
+  confirmBtnClass,
+  onConfirm,
+  cancelBtn,
+  cancelBtnStyle,
+  cancelBtnClass,
+  onCancel,
+  size = "md",
 }: ConfirmOptions) => {
   const [options, setOptions] = useState<ConfirmOptions>({
     name,
+    className,
     title,
     description,
     confirmBtnText,
     cancelBtnText,
     hasCancel,
-    ...props,
+    subTitle,
+    actions,
+    confirmBtn,
+    confirmBtnStyle,
+    confirmBtnClass,
+    cancelBtn,
+    cancelBtnStyle,
+    cancelBtnClass,
+    size,
     onConfirm: e => {
-      if (props.onConfirm) {
-        props.onConfirm(e);
+      if (onConfirm) {
+        onConfirm(e);
       }
     },
     onCancel: e => {
-      if (props.onCancel) {
-        props.onCancel(e);
+      if (onCancel) {
+        onCancel(e);
       } else {
         modal.hide(name);
       }
@@ -43,7 +63,7 @@ const useConfirm = ({
           className={options.className + " confirm-modal"}
           pageScroll={false}
           closeButton={false}
-          size={options.size || "md"}
+          size={options.size}
         >
           <div>
             <h1>{options.title}</h1>
@@ -54,6 +74,7 @@ const useConfirm = ({
                 <button
                   className={options.confirmBtnClass}
                   style={options.confirmBtnStyle}
+                  onClick={options.onConfirm}
                 >
                   {options.confirmBtnText}
                 </button>
@@ -61,6 +82,7 @@ const useConfirm = ({
                   <button
                     className={options.cancelBtnClass}
                     style={options.cancelBtnStyle}
+                    onClick={options.onCancel}
                   >
                     {options.cancelBtnText}
                   </button>
