@@ -150,4 +150,6 @@ export class modal {
 
 const isSSR = typeof window === 'undefined';
 
+export { default as useConfirm } from './confirm';
+
 export default Modal;
