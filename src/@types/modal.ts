@@ -23,6 +23,7 @@ export interface ConfirmOptions {
   confirmBtnStyle?: React.CSSProperties;
   confirmBtnClass?: string;
   onConfirm?: React.MouseEventHandler<any>;
+  loading?: boolean;
   hasCancel?: boolean;
   cancelBtn?: any;
   cancelBtnText?: string;

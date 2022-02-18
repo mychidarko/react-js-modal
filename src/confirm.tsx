@@ -10,6 +10,7 @@ const useConfirm = ({
   cancelBtnText = "Cancel",
   hasCancel = true,
   className,
+  loading = false,
   subTitle,
   actions,
   confirmBtn,
@@ -55,9 +56,12 @@ const useConfirm = ({
     }
   });
 
+  const [isLoading, setIsLoading] = useState<boolean>(loading);
+
   return {
     options,
     setOptions,
+    setLoading: setIsLoading,
     Confirm: () => {
       return (
         <Modal
@@ -79,7 +83,7 @@ const useConfirm = ({
                   style={options.confirmBtnStyle}
                   onClick={options.onConfirm}
                 >
-                  {options.confirmBtnText}
+                  {isLoading ? "Loading..." : options.confirmBtnText}
                 </button>
                 {options.hasCancel && (
                   <button
